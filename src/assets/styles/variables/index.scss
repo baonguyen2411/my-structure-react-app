@@ -1,0 +1,50 @@
+:root {
+    /* Colors */
+    // --first-color: ;
+    // --first-color-light: ;
+    // --first-color-lighten: ;
+    // --first-color-alt: ;
+    // --title-color: ;
+    // --text-color: ;
+    // --text-color-light: ;
+    // --body-color: ;
+    // --container-color: ;
+    // --scroll-bar-color: ;
+    // --scroll-thumb-color: ;
+
+    /* Font and typography */
+    --body-font: ;
+    --biggest-font-size: 5rem;
+    --bigger-font-size: 3.5rem;
+    --big-font-size: 2.5rem;
+    --h2-font-size: 1.25rem;
+    --h3-font-size: 1.125rem;
+    --normal-font-size: .938rem;
+    --small-font-size: .813rem;
+    --smaller-font-size: .75rem;
+
+    /* Responsive typography */
+    @media screen and (min-width: 968px) {
+        --biggest-font-size: 7.5rem;
+        --bigger-font-size: 4.5rem;
+        --big-font-size: 4rem;
+        --h2-font-size: 1.5rem;
+        --h3-font-size: 1.25rem;
+        --normal-font-size: 1rem;
+        --small-font-size: .875rem;
+        --smaller-font-size: .813rem;
+    }
+
+    /* Font weight */
+    // --font-regular: ;
+    // --font-medium: ;
+    // --font-semi-bold: ;
+    // --font-bold: ;
+
+    /* Margenes */
+    --mb-0-5: .5rem;
+    --mb-0-75: .75rem;
+    --mb-1: 1rem;
+    --mb-1-5: 1.5rem;
+    --mb-2: 2rem;
+}

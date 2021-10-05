@@ -1,0 +1,93 @@
+{
+  "name": "react-structure-folder",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack serve --config config/webpack.dev.js --env mode=dev",
+    "start:stag": "webpack serve --config config/webpack.dev.js --env mode=stag",
+    "start:prod": "webpack serve --config config/webpack.dev.js --env mode=prod",
+    "build": "webpack --config config/webpack.prod.js --env mode=dev",
+    "build:stag": "webpack --config config/webpack.prod.js --env mode=stag",
+    "build:prod": "webpack --config config/webpack.prod.js --env mode=prod",
+    "lint:staged": "lint-staged",
+    "lint:eslint:fix": "eslint --ignore-path .gitignore --fix",
+    "prettify": "prettier --write",
+    "test": "jest --coverage --coverageDirectory=./coverage/jest",
+    "test:watch": "jest --watchAll --coverage --coverageDirectory=./coverage"
+  },
+  "pre-commit": "lint:staged",
+  "lint-staged": {
+    "*.+(js|jsx)": [
+      "npm run lint:eslint:fix",
+      "prettier --write --ignore-unknown",
+      "git add --force"
+    ],
+    "*.+(json|css|md)": [
+      "prettier --write",
+      "git add --force"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/baonguyen2411/react-structure-folder.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/baonguyen2411/react-structure-folder/issues"
+  },
+  "homepage": "https://github.com/baonguyen2411/react-structure-folder#readme",
+  "devDependencies": {
+    "@babel/core": "^7.15.5",
+    "@babel/plugin-transform-runtime": "^7.15.0",
+    "@babel/preset-env": "^7.15.6",
+    "@babel/preset-react": "^7.14.5",
+    "autoprefixer": "^10.3.5",
+    "babel-loader": "^8.2.2",
+    "babel-plugin-syntax-dynamic-import": "^6.18.0",
+    "clean-webpack-plugin": "^4.0.0",
+    "compression-webpack-plugin": "^9.0.0",
+    "css-loader": "^6.3.0",
+    "css-minimizer-webpack-plugin": "^3.0.2",
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-react": "^7.26.0",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "file-loader": "^6.2.0",
+    "html-webpack-plugin": "^5.3.2",
+    "jest": "^27.2.3",
+    "lint-staged": "^11.1.2",
+    "mini-css-extract-plugin": "^2.3.0",
+    "postcss": "^8.3.7",
+    "postcss-loader": "^6.1.1",
+    "pre-commit": "^1.2.2",
+    "prettier": "^2.4.1",
+    "sass": "^1.42.1",
+    "sass-loader": "^12.1.0",
+    "style-loader": "^3.3.0",
+    "terser-webpack-plugin": "^5.2.4",
+    "webpack": "^5.53.0",
+    "webpack-bundle-analyzer": "^4.4.2",
+    "webpack-cli": "^4.8.0",
+    "webpack-dev-server": "^4.2.1",
+    "webpack-merge": "^5.8.0",
+    "workbox-webpack-plugin": "^6.3.0"
+  },
+  "dependencies": {
+    "@reduxjs/toolkit": "^1.6.1",
+    "axios": "^0.21.4",
+    "bootstrap": "^5.1.1",
+    "moment-timezone": "^0.5.33",
+    "react": "^17.0.2",
+    "react-bootstrap": "^2.0.0-rc.0",
+    "react-dom": "^17.0.2",
+    "react-icons": "^4.2.0",
+    "react-redux": "^7.2.5",
+    "react-router-dom": "^5.3.0",
+    "redux-saga": "^1.1.3"
+  }
+}

@@ -1,0 +1,63 @@
+@import './assets/styles/index.scss';
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  // font-family: ;
+  // font-size: ;
+  // background-color: ;
+  // color: ;
+
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+p {
+  margin-bottom: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.main {
+  position: absolute;
+  height: 100%;
+  width: calc(100% - 78px);
+  left: 78px;
+  transition: all .5s ease;
+  padding: 1rem;
+
+  &.active {
+    left: 240px;
+    width: calc(100% - 240px);
+  }
+}
