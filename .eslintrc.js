@@ -43,6 +43,7 @@ module.exports = {
         'jest.config.js',
         'config/*.js',
         '__mocks__/*.js',
+        '**/__tests__/*.test.js',
       ],
       rules: {
         'no-undef': 0,
