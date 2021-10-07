@@ -13,7 +13,7 @@
     "lint:staged": "lint-staged",
     "lint:eslint:fix": "eslint --ignore-path .gitignore --fix",
     "prettify": "prettier --write",
-    "test": "jest --coverage --coverageDirectory=./coverage/jest",
+    "test": "jest --coverage --coverageDirectory=./coverage",
     "test:watch": "jest --watchAll --coverage --coverageDirectory=./coverage"
   },
   "pre-commit": "lint:staged",
@@ -41,6 +41,7 @@
   "homepage": "https://github.com/baonguyen2411/react-structure-folder#readme",
   "devDependencies": {
     "@babel/core": "^7.15.5",
+    "@babel/plugin-transform-modules-commonjs": "^7.15.4",
     "@babel/plugin-transform-runtime": "^7.15.0",
     "@babel/preset-env": "^7.15.6",
     "@babel/preset-react": "^7.14.5",
@@ -66,6 +67,7 @@
     "postcss-loader": "^6.1.1",
     "pre-commit": "^1.2.2",
     "prettier": "^2.4.1",
+    "redux-saga-test-plan": "^4.0.3",
     "sass": "^1.42.1",
     "sass-loader": "^12.1.0",
     "style-loader": "^3.3.0",

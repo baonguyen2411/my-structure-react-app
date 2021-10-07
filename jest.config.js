@@ -1,5 +1,5 @@
 module.exports = {
-  collectCoverageFrom: ['src/slices/*.js'],
+  collectCoverageFrom: ['src/sagas/*.js'],
   coveragePathIgnorePatterns: ['node_modules'],
   coverageThreshold: {
     global: {
