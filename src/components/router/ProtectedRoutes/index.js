@@ -9,30 +9,18 @@ const ProtectedRoutes = ({ routes, isAuthenticated }) => {
   return (
     <Switch>
       <Suspense fallback={<div>Loading...</div>}>
-        {routes.map(({ component: Component, path, exact, isPrivate }) => {
-          if (isPrivate) {
+        {routes.map((route) => {
+          if (route?.requiredAuthen) {
             return (
               <PrivateRoute
-                key={path}
-                path={path}
-                exact={exact}
+                key={route?.path}
                 isAuthenticated={isAuthenticated}
-              >
-                <Component />
-              </PrivateRoute>
+                {...route}
+              />
             );
           }
 
-          return (
-            <PublicRoute
-              key={path}
-              path={path}
-              exact={exact}
-              isAuthenticated={!isAuthenticated}
-            >
-              <Component />
-            </PublicRoute>
-          );
+          return <PublicRoute key={route?.path} {...route} />;
         })}
       </Suspense>
     </Switch>

@@ -2,13 +2,19 @@ import React, { memo } from 'react';
 import PropTypes from 'prop-types';
 import { Redirect, Route } from 'react-router-dom';
 
-const PrivateRoute = ({ children, isAuthenticated, ...rest }) => {
+const PrivateRoute = ({
+  path,
+  component: Component,
+  exact,
+  isAuthenticated,
+}) => {
   return (
     <Route
-      {...rest}
+      path={path}
+      exact={exact}
       render={({ location }) =>
         isAuthenticated ? (
-          children
+          <Component />
         ) : (
           <Redirect
             to={{
@@ -23,11 +29,17 @@ const PrivateRoute = ({ children, isAuthenticated, ...rest }) => {
 };
 
 PrivateRoute.propTypes = {
-  children: PropTypes.any,
+  path: PropTypes.string.isRequired,
+  component: PropTypes.oneOfType([
+    PropTypes.element.isRequired,
+    PropTypes.elementType.isRequired,
+  ]),
+  exact: PropTypes.bool,
   isAuthenticated: PropTypes.bool,
 };
 
 PrivateRoute.defaultProps = {
+  exact: false,
   isAuthenticated: false,
 };
 

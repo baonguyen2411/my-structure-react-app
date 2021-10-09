@@ -5,16 +5,19 @@ const routes = [
     path: '/',
     component: lazy(() => import('./pages/LandingPage')),
     exact: true,
+    requiredAuthen: true,
   },
   {
     path: '/setting',
     component: lazy(() => import('./pages/SettingPage')),
     exact: false,
+    requiredAuthen: true,
   },
   {
     path: '/file-manager',
     component: lazy(() => import('./pages/FileManager')),
     exact: false,
+    requiredAuthen: true,
   },
   {
     path: '/user',

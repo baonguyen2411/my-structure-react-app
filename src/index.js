@@ -1,9 +1,22 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
+import { BrowserRouter as Router } from 'react-router-dom';
+
+import configureAppStore from './store/configureAppStore';
 
 import App from './app';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+const store = configureAppStore();
+
+ReactDOM.render(
+  <Provider store={store}>
+    <Router>
+      <App />
+    </Router>
+  </Provider>,
+  document.getElementById('root'),
+);
 
 // eslint-disable-next-line no-undef
 if (process.env.NODE_ENV === 'production') {
