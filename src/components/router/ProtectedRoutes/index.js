@@ -7,8 +7,8 @@ import PublicRoute from '../PublicRoute';
 
 const ProtectedRoutes = ({ routes, isAuthenticated }) => {
   return (
-    <Switch>
-      <Suspense fallback={<div>Loading...</div>}>
+    <Suspense fallback={<div>Loading...</div>}>
+      <Switch>
         {routes.map((route) => {
           if (route?.requiredAuthen) {
             return (
@@ -22,8 +22,8 @@ const ProtectedRoutes = ({ routes, isAuthenticated }) => {
 
           return <PublicRoute key={route?.path} {...route} />;
         })}
-      </Suspense>
-    </Switch>
+      </Switch>
+    </Suspense>
   );
 };
 
