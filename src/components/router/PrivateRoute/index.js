@@ -18,7 +18,8 @@ const PrivateRoute = ({
         ) : (
           <Redirect
             to={{
-              pathname: '/auth',
+              // pathname: '/auth',
+              pathname: '/',
               state: { from: location },
             }}
           />
