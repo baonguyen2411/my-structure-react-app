@@ -8,6 +8,11 @@ const routes = [
     requiredAuthen: true,
   },
   {
+    path: '/auth',
+    component: lazy(() => import('./pages/AuthPage')),
+    exact: true,
+  },
+  {
     path: '/setting',
     component: lazy(() => import('./pages/SettingPage')),
     exact: false,
