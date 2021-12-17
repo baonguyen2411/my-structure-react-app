@@ -9,6 +9,7 @@
     "@babel/preset-react"
   ],
   "plugins": [
+    "lodash",
     "@babel/plugin-transform-runtime",
     "syntax-dynamic-import"
   ],

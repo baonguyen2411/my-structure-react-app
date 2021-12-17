@@ -14,6 +14,7 @@ const commonConfig = require('./webpack.common');
 const prodConfig = (env) => ({
   mode: 'production',
   target: 'browserslist',
+  devtool: 'eval-cheap-module-source-map',
   output: {
     path: path.resolve(process.cwd(), 'dist'),
     filename: '[name].[chunkhash].js',
@@ -24,25 +25,36 @@ const prodConfig = (env) => ({
     minimize: true,
     minimizer: [
       new TerserPlugin({
+        parallel: 4,
         terserOptions: {
-          compress: {
-            comparisons: false,
+          parse: {
+            ecma: 8,
           },
-          parse: {},
-          mangle: true,
+          compress: {
+            ecma: 8,
+            warnings: false,
+            comparisons: false,
+            inline: 2,
+          },
+          mangle: {
+            safari10: true,
+          },
           output: {
+            ecma: 5,
             comments: false,
             ascii_only: true,
           },
-          nameCache: {},
-          sourceMap: true,
         },
-        parallel: true,
       }),
-      new CssMinimizerPlugin(),
+      new CssMinimizerPlugin({
+        parallel: 4,
+      }),
     ],
-    runtimeChunk: 'single',
+    runtimeChunk: true,
     splitChunks: {
+      // include all types of chunks
+      chunks: 'all',
+      //  Repeat packaging problem
       cacheGroups: {
         vendor: {
           // can be used in chunks array of HtmlWebpackPlugin
