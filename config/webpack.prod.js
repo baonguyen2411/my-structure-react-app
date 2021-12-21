@@ -4,6 +4,7 @@ const { merge } = require('webpack-merge');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CompressionPlugin = require('compression-webpack-plugin');
 const BundleAnalyzerPlugin =
   require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
@@ -14,12 +15,13 @@ const commonConfig = require('./webpack.common');
 const prodConfig = (env) => ({
   mode: 'production',
   target: 'browserslist',
-  devtool: 'eval-cheap-module-source-map',
+  devtool: 'source-map',
   output: {
     path: path.resolve(process.cwd(), 'dist'),
     filename: '[name].[chunkhash].js',
     chunkFilename: '[name].[chunkhash].chunk.js',
     publicPath: '/',
+    clean: true,
   },
   optimization: {
     minimize: true,
@@ -50,6 +52,7 @@ const prodConfig = (env) => ({
         parallel: 4,
       }),
     ],
+    moduleIds: 'deterministic',
     runtimeChunk: true,
     splitChunks: {
       // include all types of chunks
@@ -77,6 +80,10 @@ const prodConfig = (env) => ({
       test: /\.(js|css|html|svg)$/,
       threshold: 10240,
       minRatio: 0.8,
+    }),
+    new MiniCssExtractPlugin({
+      ignoreOrder: true,
+      filename: '[chunkhash].[name].css',
     }),
     new WorkboxPlugin.GenerateSW({
       // these options encourage the ServiceWorkers to get in there fast

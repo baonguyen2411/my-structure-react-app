@@ -1,13 +1,17 @@
 const webpack = require('webpack');
 const { merge } = require('webpack-merge');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const commonConfig = require('./webpack.common');
 
 const devConfig = (env) => ({
   mode: 'development',
   target: 'web',
+  // Emit a source map for easier debugging
+  // See https://webpack.js.org/configuration/devtool/#devtool
+  devtool: 'eval-source-map',
   output: {
-    publicPath: 'http://localhost:8080/',
+    publicPath: 'http://localhost:5000/',
   },
   optimization: {
     runtimeChunk: 'single',
@@ -25,11 +29,9 @@ const devConfig = (env) => ({
     new webpack.DefinePlugin({
       'process.env.MODE': JSON.stringify(env.mode),
     }),
+    new MiniCssExtractPlugin({ ignoreOrder: true }),
     new webpack.HotModuleReplacementPlugin(),
   ],
-  // Emit a source map for easier debugging
-  // See https://webpack.js.org/configuration/devtool/#devtool
-  devtool: 'eval-source-map',
 });
 
 module.exports = (env) => {
