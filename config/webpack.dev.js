@@ -1,6 +1,7 @@
 const webpack = require('webpack');
 const { merge } = require('webpack-merge');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const commonConfig = require('./webpack.common');
 
@@ -26,11 +27,16 @@ const devConfig = (env) => ({
     historyApiFallback: true,
   },
   plugins: [
+    new webpack.HotModuleReplacementPlugin(),
     new webpack.DefinePlugin({
       'process.env.MODE': JSON.stringify(env.mode),
     }),
+    new HtmlWebpackPlugin({
+      title: 'My Structure React App',
+      template: 'public/index.html',
+      inject: true,
+    }),
     new MiniCssExtractPlugin({ ignoreOrder: true }),
-    new webpack.HotModuleReplacementPlugin(),
   ],
 });
 

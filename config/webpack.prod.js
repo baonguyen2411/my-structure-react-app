@@ -9,6 +9,7 @@ const CompressionPlugin = require('compression-webpack-plugin');
 const BundleAnalyzerPlugin =
   require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const WorkboxPlugin = require('workbox-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const commonConfig = require('./webpack.common');
 
@@ -74,6 +75,12 @@ const prodConfig = (env) => ({
       openAnalyzer: false,
       defaultSizes: 'gzip',
       generateStatsFile: true,
+    }),
+    new HtmlWebpackPlugin({
+      title: 'My Structure React App',
+      template: 'public/index.html',
+      inject: true,
+      minify: true,
     }),
     new CompressionPlugin({
       algorithm: 'gzip',
