@@ -10,6 +10,7 @@ const BundleAnalyzerPlugin =
   require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const WorkboxPlugin = require('workbox-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const WebpackPwaManifest = require('webpack-pwa-manifest');
 
 const commonConfig = require('./webpack.common');
 
@@ -79,6 +80,7 @@ const prodConfig = (env) => ({
     new HtmlWebpackPlugin({
       title: 'My Structure React App',
       template: 'public/index.html',
+      favicon: 'src/assets/images/favicon.ico',
       inject: true,
       minify: true,
     }),
@@ -91,6 +93,21 @@ const prodConfig = (env) => ({
     new MiniCssExtractPlugin({
       ignoreOrder: true,
       filename: '[chunkhash].[name].css',
+    }),
+    new WebpackPwaManifest({
+      name: 'My Structure React App',
+      short_name: 'MyApp',
+      description: 'Web App!',
+      theme_color: '#ffffff',
+      background_color: '#e5e5e5',
+      inject: true,
+      ios: true,
+      icons: [
+        {
+          src: path.resolve('src/assets/images/logo-512.png'),
+          sizes: [96, 128, 192, 256, 384, 512], // multiple sizes
+        },
+      ],
     }),
     new WorkboxPlugin.GenerateSW({
       // these options encourage the ServiceWorkers to get in there fast

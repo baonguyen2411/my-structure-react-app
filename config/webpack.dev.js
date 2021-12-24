@@ -34,6 +34,7 @@ const devConfig = (env) => ({
     new HtmlWebpackPlugin({
       title: 'My Structure React App',
       template: 'public/index.html',
+      favicon: 'src/assets/images/favicon.ico',
       inject: true,
     }),
     new MiniCssExtractPlugin({ ignoreOrder: true }),
