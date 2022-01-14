@@ -12,7 +12,7 @@ const devConfig = (env) => ({
   // See https://webpack.js.org/configuration/devtool/#devtool
   devtool: 'eval-source-map',
   output: {
-    publicPath: 'http://localhost:5000/',
+    publicPath: 'http://localhost:8080/',
   },
   optimization: {
     runtimeChunk: 'single',
