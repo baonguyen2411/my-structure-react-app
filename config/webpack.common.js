@@ -1,6 +1,5 @@
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const LodashModuleReplacementPlugin = require('lodash-webpack-plugin');
 
 module.exports = {
   module: {
@@ -45,5 +44,5 @@ module.exports = {
       assets: path.resolve(__dirname, '../src/assets/'),
     },
   },
-  plugins: [new LodashModuleReplacementPlugin()],
+  plugins: [],
 };

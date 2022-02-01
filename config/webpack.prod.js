@@ -5,6 +5,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const LodashModuleReplacementPlugin = require('lodash-webpack-plugin');
 const CompressionPlugin = require('compression-webpack-plugin');
 const BundleAnalyzerPlugin =
   require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
@@ -82,7 +83,15 @@ const prodConfig = (env) => ({
       template: 'public/index.html',
       favicon: 'src/assets/images/favicon.ico',
       inject: true,
-      minify: true,
+      minify: {
+        collapseWhitespace: true,
+        keepClosingSlash: true,
+        removeComments: true,
+        removeRedundantAttributes: true,
+        removeScriptTypeAttributes: true,
+        removeStyleLinkTypeAttributes: true,
+        useShortDoctype: true,
+      },
     }),
     new CompressionPlugin({
       algorithm: 'gzip',
@@ -93,6 +102,12 @@ const prodConfig = (env) => ({
     new MiniCssExtractPlugin({
       ignoreOrder: true,
       filename: '[chunkhash].[name].css',
+    }),
+    new LodashModuleReplacementPlugin({
+      collections: true,
+      paths: true,
+      caching: true,
+      flattening: true,
     }),
     new WebpackPwaManifest({
       name: 'My Structure React App',
