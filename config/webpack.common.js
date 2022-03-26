@@ -37,7 +37,7 @@ module.exports = {
     ],
   },
   resolve: {
-    modules: ['node_modules', 'src'],
+    modules: ['node_modules'],
     extensions: ['*', '.js', '.jsx', '.json'],
     mainFields: ['browser', 'jsnext:main', 'main'],
     alias: {
