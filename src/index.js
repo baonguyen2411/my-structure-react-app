@@ -8,14 +8,16 @@ import configureAppStore from './store/configureAppStore';
 import App from './app';
 
 const store = configureAppStore();
+const root = ReactDOM.createRoot(document.getElementById('root'));
 
-ReactDOM.render(
-  <Provider store={store}>
-    <Router>
-      <App />
-    </Router>
-  </Provider>,
-  document.getElementById('root'),
+root.render(
+  <React.StrictMode>
+    <Provider store={store}>
+      <Router>
+        <App />
+      </Router>
+    </Provider>
+  </React.StrictMode>,
 );
 
 // eslint-disable-next-line no-undef
