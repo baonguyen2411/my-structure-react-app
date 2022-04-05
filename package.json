@@ -78,10 +78,10 @@
     "webpack": "^5.53.0",
     "webpack-bundle-analyzer": "^4.4.2",
     "webpack-cli": "^4.8.0",
-    "webpack-dev-server": "^4.2.1",
+    "webpack-dev-server": "^4.8.0",
     "webpack-merge": "^5.8.0",
     "webpack-pwa-manifest": "^4.3.0",
-    "workbox-webpack-plugin": "^6.3.0"
+    "workbox-webpack-plugin": "^6.5.2"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.6.1",
@@ -89,9 +89,9 @@
     "bootstrap": "^5.1.1",
     "lodash": "^4.17.21",
     "moment-timezone": "^0.5.33",
-    "react": "^17.0.2",
+    "react": "^18.0.0",
     "react-bootstrap": "^2.0.0-rc.0",
-    "react-dom": "^17.0.2",
+    "react-dom": "^18.0.0",
     "react-icons": "^4.2.0",
     "react-redux": "^7.2.5",
     "react-router-dom": "^5.3.0",
