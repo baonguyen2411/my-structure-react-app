@@ -41,7 +41,10 @@ module.exports = {
     extensions: ['*', '.js', '.jsx', '.json'],
     mainFields: ['browser', 'jsnext:main', 'main'],
     alias: {
-      assets: path.resolve(__dirname, '../src/assets/'),
+      assets: path.resolve(process.cwd(), './src/assets'),
+      hooks: path.resolve(process.cwd(), './src/hooks'),
+      components: path.resolve(process.cwd(), './src/components'),
+      services: path.resolve(process.cwd(), './src/services'),
     },
   },
   plugins: [],

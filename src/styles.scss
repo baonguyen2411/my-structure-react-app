@@ -1,4 +1,4 @@
-@import './assets/styles/index.scss';
+@import 'assets/styles/index.scss';
 
 *,
 ::before,
@@ -21,7 +21,6 @@ body {
   // font-size: ;
   // background-color: ;
   // color: ;
-
 }
 
 h1,
@@ -53,7 +52,7 @@ img {
   height: 100%;
   width: calc(100% - 78px);
   left: 78px;
-  transition: all .5s ease;
+  transition: all 0.5s ease;
   padding: 1rem;
 
   &.active {

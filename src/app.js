@@ -2,8 +2,8 @@ import React, { memo, useState, useEffect } from 'react';
 
 import routes from './routes';
 
-import Sidebar from './components/layout/Sidebar';
-import ProtectedRoutes from './components/router/ProtectedRoutes';
+import Sidebar from 'components/layout/Sidebar';
+import ProtectedRoutes from 'components/router/ProtectedRoutes';
 
 import './styles.scss';
 
