@@ -9,7 +9,7 @@ const LodashModuleReplacementPlugin = require('lodash-webpack-plugin');
 const CompressionPlugin = require('compression-webpack-plugin');
 const BundleAnalyzerPlugin =
   require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
-const WorkboxPlugin = require('workbox-webpack-plugin');
+const { InjectManifest } = require('workbox-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const WebpackPwaManifest = require('webpack-pwa-manifest');
 
@@ -124,11 +124,9 @@ const prodConfig = (env) => ({
         },
       ],
     }),
-    new WorkboxPlugin.GenerateSW({
-      // these options encourage the ServiceWorkers to get in there fast
-      // and not allow any straggling "old" SWs to hang around
-      clientsClaim: true,
-      skipWaiting: true,
+    new InjectManifest({
+      swSrc: './src/service-worker.js',
+      swDest: 'service-worker.js',
     }),
     new webpack.DefinePlugin({
       'process.env.MODE': JSON.stringify(env.mode),

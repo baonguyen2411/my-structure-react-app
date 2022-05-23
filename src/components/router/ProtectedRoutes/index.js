@@ -2,24 +2,14 @@ import React, { memo, Suspense } from 'react';
 import PropTypes from 'prop-types';
 import { Switch } from 'react-router-dom';
 
-import PrivateRoute from '../PrivateRoute';
+// import PrivateRoute from '../PrivateRoute';
 import PublicRoute from '../PublicRoute';
 
-const ProtectedRoutes = ({ routes, isAuthenticated }) => {
+const ProtectedRoutes = ({ routes }) => {
   return (
     <Suspense fallback={<div>Loading...</div>}>
       <Switch>
         {routes.map((route) => {
-          if (route?.requiredAuthen) {
-            return (
-              <PrivateRoute
-                key={route?.path}
-                isAuthenticated={isAuthenticated}
-                {...route}
-              />
-            );
-          }
-
           return <PublicRoute key={route?.path} {...route} />;
         })}
       </Switch>
