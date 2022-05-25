@@ -29,7 +29,8 @@ const App = () => {
         isActivated={isActivated}
         onToggle={() => setIsActivated(!isActivated)}
       />
-      <main className={`main ${isActivated && 'active'}`}>
+      <main className={`main ${isActivated && 'active'} bg-red-800`}>
+        <h2 className="text-2xl text-red-700">ABC</h2>
         <ProtectedRoutes routes={routes} isAuthenticated={isAuthenticated} />
       </main>
     </>

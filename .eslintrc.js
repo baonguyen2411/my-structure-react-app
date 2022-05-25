@@ -40,6 +40,7 @@ module.exports = {
       files: [
         '.eslintrc.js',
         'postcss.config.js',
+        'tailwind.config.js',
         'jest.config.js',
         'config/*.js',
         '__mocks__/*.js',
