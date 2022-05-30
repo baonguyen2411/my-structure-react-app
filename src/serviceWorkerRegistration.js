@@ -7,7 +7,7 @@ export default function registerServiceWorker() {
   }
   // Check if the serviceWorker Object exists in the navigator object ( means if browser supports SW )
   if ('serviceWorker' in navigator) {
-    const wb = new Workbox('service-worker.js');
+    const wb = new Workbox('serviceWorker.js');
 
     wb.addEventListener('installed', (event) => {
       /**

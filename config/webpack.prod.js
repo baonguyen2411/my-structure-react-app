@@ -93,22 +93,6 @@ const prodConfig = (env) => ({
         useShortDoctype: true,
       },
     }),
-    new CompressionPlugin({
-      algorithm: 'gzip',
-      test: /\.(js|css|html|svg)$/,
-      threshold: 10240,
-      minRatio: 0.8,
-    }),
-    new MiniCssExtractPlugin({
-      ignoreOrder: true,
-      filename: '[chunkhash].[name].css',
-    }),
-    new LodashModuleReplacementPlugin({
-      collections: true,
-      paths: true,
-      caching: true,
-      flattening: true,
-    }),
     new WebpackPwaManifest({
       name: 'My Structure React App',
       short_name: 'MyApp',
@@ -125,8 +109,26 @@ const prodConfig = (env) => ({
       ],
     }),
     new InjectManifest({
-      swSrc: './src/service-worker.js',
-      swDest: 'service-worker.js',
+      swSrc: './src/serviceWorker.js',
+      swDest: 'serviceWorker.js',
+      exclude: [/\.map$/],
+      maximumFileSizeToCacheInBytes: 10 * 1024 * 1024,
+    }),
+    new CompressionPlugin({
+      algorithm: 'gzip',
+      test: /\.(js|css|html|svg)$/,
+      threshold: 10240,
+      minRatio: 0.8,
+    }),
+    new MiniCssExtractPlugin({
+      ignoreOrder: true,
+      filename: '[name].[chunkhash].css',
+    }),
+    new LodashModuleReplacementPlugin({
+      collections: true,
+      paths: true,
+      caching: true,
+      flattening: true,
     }),
     new webpack.DefinePlugin({
       'process.env.MODE': JSON.stringify(env.mode),
