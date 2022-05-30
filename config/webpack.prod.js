@@ -111,7 +111,6 @@ const prodConfig = (env) => ({
     new InjectManifest({
       swSrc: './src/serviceWorker.js',
       swDest: 'serviceWorker.js',
-      exclude: [/\.map$/],
       maximumFileSizeToCacheInBytes: 10 * 1024 * 1024,
     }),
     new CompressionPlugin({
