@@ -103,8 +103,19 @@ const prodConfig = (env) => ({
       ios: true,
       icons: [
         {
-          src: path.resolve('src/assets/images/logo-512.png'),
+          src: path.resolve('src/assets/images/logo.png'),
           sizes: [96, 128, 192, 256, 384, 512], // multiple sizes
+        },
+        {
+          src: path.resolve('src/assets/images/logo.png'),
+          size: 1024,
+          destination: path.join('icons', 'ios'),
+          ios: true,
+        },
+        {
+          src: path.resolve('src/assets/images/logo.png'),
+          size: '1024x1024',
+          purpose: 'maskable',
         },
       ],
     }),

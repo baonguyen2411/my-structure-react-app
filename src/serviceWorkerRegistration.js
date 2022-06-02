@@ -21,6 +21,7 @@ export default function registerServiceWorker() {
         }
       }
     });
+
     wb.register();
   }
 }
