@@ -9,7 +9,7 @@ const ProtectedRoutes = ({ routes }) => {
   return (
     <Suspense fallback={<div>Loading...</div>}>
       <Switch>
-        {routes.map((route) => {
+        {routes.map(route => {
           return <PublicRoute key={route?.path} {...route} />;
         })}
       </Switch>

@@ -19,13 +19,13 @@
   },
   "pre-commit": "lint:staged",
   "lint-staged": {
-    "*.+(js|jsx)": [
-      "npm run lint:eslint:fix",
-      "prettier --write --ignore-unknown",
+    "*.+(js|ts|jsx)": [
+      "npm run lint:fix",
+      "npm run prettify",
       "git add --force"
     ],
-    "*.+(json|css|md)": [
-      "prettier --write",
+    "*.+(json|css|scss|md)": [
+      "npm run prettify",
       "git add --force"
     ]
   },

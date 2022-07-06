@@ -9,7 +9,7 @@ const sagaMiddleware = createSagaMiddleware();
 export default function configureAppStore(preloadedState = {}) {
   const store = configureStore({
     reducer: createRootReducer(),
-    middleware: (getDefaultMiddleware) =>
+    middleware: getDefaultMiddleware =>
       getDefaultMiddleware().concat(sagaMiddleware),
     preloadedState,
     enhancers: [],
