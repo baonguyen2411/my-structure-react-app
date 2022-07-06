@@ -10,9 +10,10 @@
     "build": "webpack --config config/webpack.prod.js --env mode=dev",
     "build:stag": "webpack --config config/webpack.prod.js --env mode=stag",
     "build:prod": "webpack --config config/webpack.prod.js --env mode=prod",
+ "lint": "eslint \"src/**/*.{js,ts,jsx}\"",
+    "lint:fix": "eslint \"src/**/*.{js,ts,jsx}\" --ignore-path .gitignore --fix",
     "lint:staged": "lint-staged",
-    "lint:eslint:fix": "eslint --ignore-path .gitignore --fix",
-    "prettify": "prettier --write",
+    "prettify": "prettier --config ./.prettierrc.json --write \"src/**/*.{js,jsx,ts,tsx,css,md,json}\" --ignore-unknown",
     "test": "jest --coverage --coverageDirectory=./coverage",
     "test:watch": "jest --watchAll --coverage --coverageDirectory=./coverage"
   },
