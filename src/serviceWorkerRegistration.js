@@ -9,7 +9,7 @@ export default function registerServiceWorker() {
   if ('serviceWorker' in navigator) {
     const wb = new Workbox('serviceWorker.js');
 
-    wb.addEventListener('installed', (event) => {
+    wb.addEventListener('installed', event => {
       /**
        * We have the condition - event.isUpdate because we don't want to show
        * this message on the very first service worker installation,
@@ -21,6 +21,7 @@ export default function registerServiceWorker() {
         }
       }
     });
+
     wb.register();
   }
 }

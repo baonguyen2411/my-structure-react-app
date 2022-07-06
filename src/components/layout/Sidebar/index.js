@@ -19,14 +19,19 @@ const Sidebar = ({ isActivated, onToggle }) => {
         <div className="sidebar__logo">
           <div className="sidebar__logo-name">CodingLab</div>
         </div>
-        <i className="sidebar__btn-toggle" onClick={onToggle}>
+        <i
+          className="sidebar__btn-toggle"
+          onClick={onToggle}
+          role="button"
+          tabIndex="0"
+        >
           <FiMenu size={20} />
         </i>
       </div>
 
       <ul className="nav_list">
         <li>
-          <a href="#">
+          <a href="#search">
             <i className="bx bx-search">
               <FiSearch size={20} />
             </i>

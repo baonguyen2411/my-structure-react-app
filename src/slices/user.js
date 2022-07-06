@@ -34,5 +34,5 @@ export default reducer;
 // Extract and export each action creator by name
 export const { createPost, updatePost, deletePost } = actions;
 // Create and export each selector create by name
-export const rootSelector = (state) => state[ROOT_STATE_NAME] || {};
+export const rootSelector = state => state[ROOT_STATE_NAME] || {};
 export const userSelector = createSelector(rootSelector, ({ user }) => user);

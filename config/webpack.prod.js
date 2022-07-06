@@ -15,7 +15,7 @@ const WebpackPwaManifest = require('webpack-pwa-manifest');
 
 const commonConfig = require('./webpack.common');
 
-const prodConfig = (env) => ({
+const prodConfig = env => ({
   mode: 'production',
   target: 'browserslist',
   devtool: 'source-map',
@@ -103,15 +103,25 @@ const prodConfig = (env) => ({
       ios: true,
       icons: [
         {
-          src: path.resolve('src/assets/images/logo-512.png'),
+          src: path.resolve('src/assets/images/logo.png'),
           sizes: [96, 128, 192, 256, 384, 512], // multiple sizes
+        },
+        {
+          src: path.resolve('src/assets/images/logo.png'),
+          size: 1024,
+          destination: path.join('icons', 'ios'),
+          ios: true,
+        },
+        {
+          src: path.resolve('src/assets/images/logo.png'),
+          size: '1024x1024',
+          purpose: 'maskable',
         },
       ],
     }),
     new InjectManifest({
       swSrc: './src/serviceWorker.js',
       swDest: 'serviceWorker.js',
-      exclude: [/\.map$/],
       maximumFileSizeToCacheInBytes: 10 * 1024 * 1024,
     }),
     new CompressionPlugin({
@@ -144,6 +154,6 @@ const prodConfig = (env) => ({
   },
 });
 
-module.exports = (env) => {
+module.exports = env => {
   return merge(commonConfig, prodConfig(env));
 };

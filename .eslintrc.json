@@ -1,0 +1,66 @@
+{
+  "env": {
+    "browser": true,
+    "node": true,
+    "es2021": true,
+    "jest": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:jsx-a11y/recommended",
+    "prettier"
+    // 'airbnb',
+    // 'airbnb/hooks',
+  ],
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "plugins": ["react", "react-hooks", "prettier", "jsx-a11y"],
+  "ignorePatterns": [
+    ".eslintrc.js",
+    "postcss.config.js",
+    "jest.config.js",
+    "jsconfig.json",
+    "tailwind.config.js",
+    "src/sagas/__tests__/*.test.js",
+    "config/*.js",
+    "__mocks__/*.js"
+  ],
+  "rules": {
+    "semi": 2,
+    "no-console": 2,
+    "no-unused-vars": 2,
+    "no-multi-spaces": 2,
+    "react/prop-types": 1,
+    "import/no-cycle": 0,
+    "react/jsx-filename-extension": [
+      1,
+      {
+        "extensions": [".js", ".ts", ".jsx"]
+      }
+    ],
+    "react/jsx-pascal-case": 1,
+    "react/jsx-closing-bracket-location": 1,
+    "react/jsx-closing-tag-location": 1,
+    "react/jsx-tag-spacing": 1,
+    "react/jsx-curly-spacing": 1,
+    "react/jsx-boolean-value": 1,
+    "react/no-array-index-key": 1,
+    "react/jsx-wrap-multilines": 1,
+    "react/self-closing-comp": 1,
+    "jsx-quotes": 2,
+    "jsx-a11y/img-redundant-alt": 2,
+    "jsx-a11y/aria-role": 2,
+    "jsx-a11y/no-access-key": 2,
+    "jsx-a11y/mouse-events-have-key-events": 2,
+    "jsx-a11y/role-has-required-aria-props": 2,
+    "jsx-a11y/role-supports-aria-props": 2,
+    "jsx-a11y/click-events-have-key-events": 0
+  },
+  "overrides": []
+}

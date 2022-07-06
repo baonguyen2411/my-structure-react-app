@@ -1,4 +1,5 @@
 module.exports = {
+  verbose: true,
   collectCoverageFrom: ['src/sagas/*.js'],
   coveragePathIgnorePatterns: ['node_modules'],
   coverageThreshold: {
@@ -16,5 +17,6 @@ module.exports = {
     '.*\\.(css|less|styl|scss|sass)$': '<rootDir>/__mocks__/styleMock.js',
   },
   testRegex: '__tests__/.*\\.test\\.js$',
+  testEnvironment: 'jsdom',
   snapshotSerializers: [],
 };
