@@ -20,7 +20,6 @@
   "pre-commit": "lint:staged",
   "lint-staged": {
     "*.+(js|ts|jsx)": [
-      "npm run prettify",
       "npm run lint:fix",
       "git add --force"
     ],
