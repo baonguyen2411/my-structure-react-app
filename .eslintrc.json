@@ -40,8 +40,6 @@
     "__mocks__/*.js"
   ],
   "rules": {
-    "arrow-body-style": 0,
-    "prefer-arrow-callback": 0,
     "semi": 2,
     "max-len": 0,
     "max-params": [2, 3],
@@ -61,7 +59,8 @@
       2,
       2,
       {
-        "SwitchCase": 1
+        "SwitchCase": 1,
+        "ignoredNodes": ["JSXElement *", "JSXElement"]
       }
     ],
     "prefer-rest-params": 2,
