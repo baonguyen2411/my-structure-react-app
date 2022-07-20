@@ -6,17 +6,15 @@ import Col from 'react-bootstrap/Col';
 
 import './styles.scss';
 
-const Setting = () => {
-  return (
-    <Container>
-      <Row>
-        <Col>
-          <h3>Setting Page</h3>
-        </Col>
-      </Row>
-    </Container>
-  );
-};
+const Setting = () => (
+  <Container>
+    <Row>
+      <Col>
+        <h3>Setting Page</h3>
+      </Col>
+    </Row>
+  </Container>
+);
 
 Setting.propTypes = {};
 

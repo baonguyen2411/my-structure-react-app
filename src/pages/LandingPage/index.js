@@ -6,17 +6,15 @@ import Col from 'react-bootstrap/Col';
 
 import './styles.scss';
 
-const LandingPage = () => {
-  return (
-    <Container>
-      <Row>
-        <Col>
-          <h3>Landing Page</h3>
-        </Col>
-      </Row>
-    </Container>
-  );
-};
+const LandingPage = () => (
+  <Container>
+    <Row>
+      <Col>
+        <h3>Landing Page</h3>
+      </Col>
+    </Row>
+  </Container>
+);
 
 LandingPage.propTypes = {};
 
