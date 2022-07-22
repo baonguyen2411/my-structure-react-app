@@ -13,15 +13,15 @@ const PrivateRoute = ({
     exact={exact}
     render={({ location }) => (isAuthenticated ? (
       <Component />
-        ) : (
-          <Redirect
-            to={{
-              pathname: '/auth',
-              state: { from: location },
-            }}
-          />
-        ))
-      }
+      ) : (
+        <Redirect
+          to={{
+            pathname: '/auth',
+            state: { from: location },
+          }}
+        />
+      ))
+    }
   />
 );
 
