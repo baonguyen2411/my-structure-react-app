@@ -6,17 +6,15 @@ import Col from 'react-bootstrap/Col';
 
 import './styles.scss';
 
-const UserPage = () => {
-  return (
-    <Container>
-      <Row>
-        <Col>
-          <h3>UserPage Page</h3>
-        </Col>
-      </Row>
-    </Container>
-  );
-};
+const UserPage = () => (
+  <Container>
+    <Row>
+      <Col>
+        <h3>UserPage Page</h3>
+      </Col>
+    </Row>
+  </Container>
+);
 
 UserPage.propTypes = {};
 

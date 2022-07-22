@@ -7,14 +7,12 @@ const PrivateRoute = ({
   component: Component,
   exact,
   isAuthenticated,
-}) => {
-  return (
-    <Route
-      path={path}
-      exact={exact}
-      render={({ location }) =>
-        isAuthenticated ? (
-          <Component />
+}) => (
+  <Route
+    path={path}
+    exact={exact}
+    render={({ location }) => (isAuthenticated ? (
+      <Component />
         ) : (
           <Redirect
             to={{
@@ -22,18 +20,15 @@ const PrivateRoute = ({
               state: { from: location },
             }}
           />
-        )
+        ))
       }
-    />
-  );
-};
+  />
+);
 
 PrivateRoute.propTypes = {
   path: PropTypes.string.isRequired,
-  component: PropTypes.oneOfType([
-    PropTypes.element.isRequired,
-    PropTypes.elementType.isRequired,
-  ]),
+  component: PropTypes.oneOfType([PropTypes.element, PropTypes.elementType])
+    .isRequired,
   exact: PropTypes.bool,
   isAuthenticated: PropTypes.bool,
 };

@@ -9,8 +9,7 @@ const sagaMiddleware = createSagaMiddleware();
 export default function configureAppStore(preloadedState = {}) {
   const store = configureStore({
     reducer: createRootReducer(),
-    middleware: getDefaultMiddleware =>
-      getDefaultMiddleware().concat(sagaMiddleware),
+    middleware: getDefaultMiddleware => getDefaultMiddleware().concat(sagaMiddleware),
     preloadedState,
     enhancers: [],
   });
@@ -20,8 +19,7 @@ export default function configureAppStore(preloadedState = {}) {
   // eslint-disable-next-line no-undef
   if (process.env.NODE_ENV !== 'production' && module.hot) {
     // eslint-disable-next-line no-undef
-    module.hot.accept('./createRootReducer', () =>
-      store.replaceReducer(createRootReducer()),
+    module.hot.accept('./createRootReducer', () => store.replaceReducer(createRootReducer()),
     );
   }
 

@@ -6,17 +6,15 @@ import Col from 'react-bootstrap/Col';
 
 import './styles.scss';
 
-const FileManager = () => {
-  return (
-    <Container>
-      <Row>
-        <Col>
-          <h3>FileManager Page</h3>
-        </Col>
-      </Row>
-    </Container>
-  );
-};
+const FileManager = () => (
+  <Container>
+    <Row>
+      <Col>
+        <h3>FileManager Page</h3>
+      </Col>
+    </Row>
+  </Container>
+);
 
 FileManager.propTypes = {};
 

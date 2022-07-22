@@ -2,7 +2,7 @@
 import { Workbox } from 'workbox-window';
 
 export default function registerServiceWorker() {
-  if ('production' !== process.env.NODE_ENV) {
+  if (process.env.NODE_ENV !== 'production') {
     return;
   }
   // Check if the serviceWorker Object exists in the navigator object ( means if browser supports SW )
@@ -16,7 +16,7 @@ export default function registerServiceWorker() {
        * only on the updated
        */
       if (event.isUpdate) {
-        if (confirm(`New app update is available!. Click OK to refresh`)) {
+        if (confirm('New app update is available!. Click OK to refresh')) {
           window.location.reload();
         }
       }

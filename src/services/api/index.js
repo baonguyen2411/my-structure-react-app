@@ -11,7 +11,7 @@ const instance = axios.create({
 });
 
 export default {
-  getData: ({ url, responseType, params }) => {
+  getData({ url, responseType, params }) {
     return instance({
       method: 'get',
       url,
@@ -19,33 +19,33 @@ export default {
       responseType,
     });
   },
-  postData: ({ url, responseType, data }) => {
+  postData({ url, responseType, data }) {
     return instance({
       method: 'post',
-      url: url,
-      data: data,
+      url,
+      data,
       responseType,
     });
   },
-  putData: ({ url, responseType, data }) => {
+  putData({ url, responseType, data }) {
     return instance({
       method: 'put',
-      url: url,
-      data: data,
+      url,
+      data,
       responseType,
     });
   },
-  deleteData: ({ url }) => {
+  deleteData({ url }) {
     return instance({
       method: 'delete',
-      url: url,
+      url,
     });
   },
-  patchData: ({ url, responseType, data }) => {
+  patchData({ url, responseType, data }) {
     return instance({
       method: 'patch',
-      url: url,
-      data: data,
+      url,
+      data,
       responseType,
     });
   },

@@ -5,7 +5,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const commonConfig = require('./webpack.common');
 
-const devConfig = (env) => ({
+const devConfig = env => ({
   mode: 'development',
   target: 'web',
   // Emit a source map for easier debugging
@@ -27,7 +27,6 @@ const devConfig = (env) => ({
     historyApiFallback: true,
   },
   plugins: [
-    new webpack.HotModuleReplacementPlugin(),
     new webpack.DefinePlugin({
       'process.env.MODE': JSON.stringify(env.mode),
     }),
@@ -41,6 +40,6 @@ const devConfig = (env) => ({
   ],
 });
 
-module.exports = (env) => {
+module.exports = env => {
   return merge(commonConfig, devConfig(env));
 };
