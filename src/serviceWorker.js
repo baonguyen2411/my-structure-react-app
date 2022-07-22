@@ -50,24 +50,6 @@ registerRoute(
 );
 
 /**
- * API.
- *
- * Caches at: runtime
- */
-// registerRoute(
-//   ({ url }) => ['https://dxsvh7md09j46.cloudfront.net'].includes(url.origin),
-//   new NetworkFirst({
-//     cacheName: 'api-response',
-//     plugins: [
-//       new CacheableResponsePlugin({
-//         statuses: [0, 200, 201],
-//       }),
-//       new ExpirationPlugin({ maxEntries: 10 }), // Will cache maximum 10 requests.
-//     ],
-//   }),
-// );
-
-/**
  * We use CacheFirst for images because, images are not going to change very often,
  * so it does not make sense to revalidate images on every request.
  *

@@ -1,19 +1,15 @@
 import React, { memo } from 'react';
 
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-
 import './styles.scss';
 
 const LandingPage = () => (
-  <Container>
-    <Row>
-      <Col>
+  <div>
+    <div>
+      <div>
         <h3>Landing Page</h3>
-      </Col>
-    </Row>
-  </Container>
+      </div>
+    </div>
+  </div>
 );
 
 LandingPage.propTypes = {};
