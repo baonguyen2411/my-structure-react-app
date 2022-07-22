@@ -5,7 +5,8 @@ export const ROOT_STATE_NAME = 'user';
 const initialState = {
   user: {
     data: null,
-    status: 'idle', // or: 'loading', 'succeeded', 'failed'
+    isLoading: true,
+    isError: false,
     error: null,
   },
 };
@@ -16,12 +17,12 @@ const userSlice = createSlice({
   reducers: {
     login(state, action) {
       state.user.data = action.payload;
-      state.user.status = 'succeeded';
+      state.user.isLoading = true;
       state.user.error = null;
     },
     logout(state) {
       state.user.data = null;
-      state.user.status = 'idle';
+      state.user.isLoading = false;
       state.user.error = null;
     },
   },
