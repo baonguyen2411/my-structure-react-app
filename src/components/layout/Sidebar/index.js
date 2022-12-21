@@ -1,6 +1,7 @@
 import React, { memo } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import { css } from '@emotion/react';
 
 import { FiMenu, FiSearch, FiFolder, FiUser, FiSettings } from 'react-icons/fi';
 
@@ -37,7 +38,14 @@ const Sidebar = ({ isActivated, onToggle }) => {
             </i>
             <input type="text" name="" id="" placeholder="Search..." />
           </a>
-          <span className="tooltip">Search</span>
+          <span
+            className="tooltip"
+            css={css`
+              color: #11101d;
+            `}
+          >
+            Search
+          </span>
         </li>
         <li>
           <Link to="/user">

@@ -6,12 +6,16 @@
         "modules": false
       }
     ],
-    "@babel/preset-react"
+    [
+      "@babel/preset-react",
+      { "runtime": "automatic", "importSource": "@emotion/react" }
+    ]
   ],
   "plugins": [
+    "lodash",
     "@babel/plugin-transform-runtime",
     "syntax-dynamic-import",
-    "lodash"
+    "@emotion/babel-plugin"
   ],
   "env": {
     "test": {
